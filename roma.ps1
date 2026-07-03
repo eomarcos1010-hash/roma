@@ -2,6 +2,26 @@
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
+# =========================
+#        SENHA ROMA
+# =========================
+$senhaCorreta = "ROMA00"
+
+Add-Type -AssemblyName Microsoft.VisualBasic
+$senha = [Microsoft.VisualBasic.Interaction]::InputBox("Digite a senha para acessar o ROMA:", "ROMA - Acesso")
+
+if ($senha -ne $senhaCorreta) {
+    [System.Windows.Forms.MessageBox]::Show("Senha incorreta! Acesso negado.", "ROMA")
+    exit
+}
+
+# ============================================================
+#                        R O M A
+#   Utilitario de Otimizacao, Debloat e Performance Windows
+# ============================================================
+
+[System.Windows.Forms.Application]::EnableVisualStyles()
+
 # ============================================================
 #                        R O M A
 #   Utilitario de Otimizacao, Debloat e Performance Windows
